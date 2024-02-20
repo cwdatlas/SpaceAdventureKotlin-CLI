@@ -5,5 +5,5 @@ package org.example.models
     Mass: mass of the craft in KG
     Crew: number of crew that can be onboard
  */
-class Capsule(name: String, mass: Int, crew: Int) {
+class Capsule(val name: String, val mass: Int, val crew: Int) {
 }
