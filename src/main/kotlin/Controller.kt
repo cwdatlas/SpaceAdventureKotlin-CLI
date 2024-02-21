@@ -2,6 +2,10 @@ import org.example.models.Capsule
 import org.example.models.Engine
 import models.rocket
 
+/**
+ * Controller is the main interaction the user has with the Rocket Builder program.
+ * It provides the CLI interface to build your rocket.
+ */
 class Controller {
     // Map of functions tied to keywords that are used as user commands
     var commands = mapOf(
@@ -143,6 +147,9 @@ class Controller {
                                 println("Added ${rocket.engineNumber} rocket engines")
                                 choosingNumEngine = false
                             }
+                        else if(input == "quit"){
+                            choosingNumEngine = false
+                        }
                         else{
                             println("Please select a valid number of engines, like '2', $input is not valid")
                         }
