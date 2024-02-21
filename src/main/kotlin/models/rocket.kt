@@ -9,30 +9,31 @@ import kotlin.math.*
     engine: object type engine
  */
 class rocket(var name: String = "My First Rocket") {
-    var capsule: Capsule = Capsule("Default", 0, 0)
-    var tank: Tank = Tank("Default", 0, 0, 0)
-    var engine: Engine = Engine("Default", 0, 0, 0, 0)
+    var capsule: Capsule = Capsule("Unset", 0, 0)
+    var tank: Tank = Tank("Unset", 0, 0, 0.0)
+    var engine: Engine = Engine("Unset", 0, 0, 0, 0.0)
     var engineNumber = 0
-    val gravity = 9.81 // Gravity force downward in meters / second
+    private val gravity = 9.81 // Gravity force downward in meters / second
 
     fun getMass(): Int{
-        return capsule.mass + tank.mass + engine.mass*engineNumber
+        return capsule.mass + tank.mass + tank.liquidFuel + engine.mass*engineNumber
     }
     fun getThrust(): Int {
-        return engine.thrust*engineNumber
+        return engine.thrust*engineNumber*1000
     }
     fun getISP(): Int{
         return engine.isp
     }
-    fun getTWR(): Int{
-        return getThrust()/getMass()
+    fun getTWR(): Double{
+        return getThrust()/(getMass()*gravity)
     }
     fun getDeltaV(): Int{
         val dryMass = getMass() - tank.liquidFuel
-        return (getISP() * gravity * log((getMass() / dryMass).toDouble(), 10.0)).toInt()
+        var deltaV = getISP() * gravity * log(((getMass() / dryMass.toDouble())), Math.E)
+        return deltaV.toInt()
     }
     fun getMaxEngines(engine: Engine): Int{
-        return (floor(tank.width.toDouble()/engine.width)).toInt()
+        return (floor((Math.PI*(tank.width / 2).pow(2.0)) /(Math.PI*(engine.width/2).pow(2.0)))).toInt()
     }
     fun setCapsule(capsule: Capsule): Boolean{
         this.capsule = capsule
