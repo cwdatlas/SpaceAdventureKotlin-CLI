@@ -1,9 +1,6 @@
-package org.example
-
-import Tank
 import org.example.models.Capsule
 import org.example.models.Engine
-import org.example.models.rocket
+import models.rocket
 
 class Controller {
     // Map of functions tied to keywords that are used as user commands
