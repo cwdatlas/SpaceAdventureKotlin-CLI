@@ -27,10 +27,10 @@ unusable, so building the jar with all the needed libraries then executing that 
 how to use
 ---
 Here is a list of commands for the game:
-capsule -> Lists capsules and their stats. Any choice will override a previous choice
-tank    -> Lists tanks and their stats. Any choice will override a previous choice
-engine  -> Lists engines and their stats. Any choice will override a previous choice
-status  -> Lists the mass and thrust of your rocket. you will just have to wait for Delta V to be calculated
-launch  -> Launches your rocket! See how far you get!
-help    -> looks like you already know what this does
-thankyou-> Shows my thanks for the person that helped debug (Anzhela the debugger)
+- capsule -> Lists capsules and their stats. Any choice will override a previous choice
+- tank    -> Lists tanks and their stats. Any choice will override a previous choice
+- engine  -> Lists engines and their stats. Any choice will override a previous choice
+- status  -> Lists the mass and thrust of your rocket. you will just have to wait for Delta V to be calculated
+- launch  -> Launches your rocket! See how far you get!
+- help    -> looks like you already know what this does
+- thankyou-> Shows my thanks for the person that helped debug (Anzhela the debugger)
