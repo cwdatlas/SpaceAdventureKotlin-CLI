@@ -249,7 +249,7 @@ class Controller {
     }
 
     /**
-     * Provides help for the user.
+     * Provides help for the user. Similar to README.md file
      */
     private fun help() {
         println("Rocket builder, otherwise known as SpaceAdventure is a game where you can build your own rocket")
@@ -280,6 +280,10 @@ class Controller {
         println("Goodbye!")
         gameLoop = false
     }
+
+    /**
+     * Thank you to the people who debug my random programs, which means thanks Anzhela.
+     */
     private fun thankyou(){
         println("Thank you Anzhela for debugging when you has a test in your next class!")
     }
