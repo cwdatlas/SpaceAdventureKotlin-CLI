@@ -1,6 +1,7 @@
+import models.Tank
 import models.rocket
-import org.example.models.Capsule
-import org.example.models.Engine
+import models.Capsule
+import models.Engine
 
 /**
  * @author Aidan Scott
@@ -109,11 +110,11 @@ class Controller {
      * user input.
      */
     private fun tank() {
-        println("Welcome to the Tank builder bay")
+        println("Welcome to the models.Tank builder bay")
         println("---------------------------------")
         // List all tanks
         for (i in tanks.values) {
-            println("--- ${i.name} Tank ---")
+            println("--- ${i.name} models.Tank ---")
             println("Mass:     ${i.mass}kg")
             println("Wet Mass: ${i.liquidFuel}kn")
             println("Width:    ${i.width} meters")
@@ -127,10 +128,10 @@ class Controller {
                 rocket.tank = tanks[userInput]!! // setting tank safely
                 choosing = false
             } else if (userInput == "quit") {
-                print("exiting Tank Bay")
+                print("exiting models.Tank Bay")
                 choosing = false
             } else
-                println("Invalid Tank, '$userInput' try again, or quit")
+                println("Invalid models.Tank, '$userInput' try again, or quit")
         }
     }
 
@@ -207,7 +208,7 @@ class Controller {
         println("Mass: ${rocket.capsule.mass}kg")
         println("Crew: ${rocket.capsule.crew}")
 
-        println("--- ${rocket.tank.name} Tank ---")
+        println("--- ${rocket.tank.name} models.Tank ---")
         println("Mass:     ${rocket.tank.mass}kg")
         println("Wet Mass: ${rocket.tank.liquidFuel}kn")
         println("Width:    ${rocket.tank.width} meters")
@@ -229,7 +230,7 @@ class Controller {
         if (rocket.capsule.name == "Unset")
             println("You need to select a Capsule before you launch!")
         else if (rocket.tank.name == "Unset")
-            println("You need to select a Tank before you launch!")
+            println("You need to select a models.Tank before you launch!")
         else if (rocket.engine.name == "Unset")
             println("You need to select an Engine before you launch!")
         else if (rocket.getTWR() < 1.5) // checking if the thrust to weight ratio is high enough

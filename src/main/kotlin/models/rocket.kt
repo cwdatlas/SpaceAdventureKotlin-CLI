@@ -1,6 +1,5 @@
 package models
 
-import Tank
 import org.example.models.Capsule
 import org.example.models.Engine
 import kotlin.math.floor
