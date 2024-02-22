@@ -1,7 +1,7 @@
 ---
 SpaceAdventure Kotlin Addition
 ---
-The kotlin version of space adventure is a port of my python space adventure fromhttps://github.com/cwdatlas/SpaceAdventure-terminal-.
+The kotlin version of space adventure is a port of my python space adventure from https://github.com/cwdatlas/SpaceAdventure-terminal-.
 You are able to use the cli to build a rocket and fly it, and if you have enough thrust and DeltaV, then you can get to space!
 This is my first ever Kotlin program! Woohoo
 Vocab for the game!
