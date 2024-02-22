@@ -15,9 +15,13 @@ how to install
 you must have git and java17 and up installed to run this program
 
 - in a new folder use 'git repo clone 'https://github.com/cwdatlas/SpaceAdventureKotlin-CLI' in your command line
-- Navigate into the newly created directory
-- Now type ./gradlew run, and the application will boot up. --Be warned there is a major issue relating to booting up game this way--
-- If the application boots and repeats "invalid command, try help to find valid commands", then the error is trying to be fixed. This error seems to result from gradle printing lines that the game picks up resulting in a loop.
+- Navigate into the newly created directory so you can see the 'gradlew' file.
+- Now type './gradlew build', this will build a jar with all needed libraries.
+- Lastly, type in 'java -jar build/lib/KSpaceAdventure-CLI-1.0-SNAPSHOT.jar' and rocket builder will boot right up!
+
+Note: Using gradlew run from Gradle plugin application would be better, but because the RocketBuilder program consumes lines
+from the CLI, gradle will start the program, then keep feeding information to the readln(). This makes the program completely
+unusable, so building the jar with all the needed libraries then executing that was the best known option.
 
 ---
 how to use
