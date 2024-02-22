@@ -1,8 +1,11 @@
 package models
+
 import Tank
 import org.example.models.Capsule
 import org.example.models.Engine
-import kotlin.math.*
+import kotlin.math.floor
+import kotlin.math.log
+import kotlin.math.pow
 
 /**
  * @author Aidan Scott
@@ -21,8 +24,8 @@ class rocket(var name: String = "My First Rocket") {
      * getMass() calculates mass
      * @return mass: Int
      */
-    fun getMass(): Int{
-        return capsule.mass + tank.mass + tank.liquidFuel + engine.mass*engineNumber
+    fun getMass(): Int {
+        return capsule.mass + tank.mass + tank.liquidFuel + engine.mass * engineNumber
     }
 
     /**
@@ -30,14 +33,14 @@ class rocket(var name: String = "My First Rocket") {
      * @return thrust: Int
      */
     fun getThrust(): Int {
-        return engine.thrust*engineNumber*1000
+        return engine.thrust * engineNumber * 1000
     }
 
     /**
      * getISP() calculates ISP (specific impulse) how efficient a rocket engine is
      * @return ISP: Int
      */
-    fun getISP(): Int{
+    fun getISP(): Int {
         return engine.isp
     }
 
@@ -45,15 +48,15 @@ class rocket(var name: String = "My First Rocket") {
      * getTWR() calculates thrust to weight ratio
      * @return TWR: Double
      */
-    fun getTWR(): Double{
-        return getThrust()/(getMass()*gravity)
+    fun getTWR(): Double {
+        return getThrust() / (getMass() * gravity)
     }
 
     /**
      * getDeltaV() calculates the deltaV or change in velocity the rocket has
      * @return deltaV: Int
      */
-    fun getDeltaV(): Int{
+    fun getDeltaV(): Int {
         val dryMass = getMass() - tank.liquidFuel
         val deltaV = getISP() * gravity * log(((getMass() / dryMass.toDouble())), Math.E)
         return deltaV.toInt()
@@ -64,7 +67,7 @@ class rocket(var name: String = "My First Rocket") {
      * @param engine: Engine
      * @return engines: Int
      */
-    fun getMaxEngines(engine: Engine): Int{
-        return (floor((Math.PI*(tank.width / 2).pow(2.0)) /(Math.PI*(engine.width/2).pow(2.0)))).toInt()
+    fun getMaxEngines(engine: Engine): Int {
+        return (floor((Math.PI * (tank.width / 2).pow(2.0)) / (Math.PI * (engine.width / 2).pow(2.0)))).toInt()
     }
 }

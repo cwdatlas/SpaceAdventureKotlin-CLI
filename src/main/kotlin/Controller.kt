@@ -103,6 +103,7 @@ class Controller {
                 println("Invalid Capsule, '$userInput' try again, or quit")
         }
     }
+
     /**
      * tank will list available tanks and allow the user to select one using the same method as in the start game
      * user input.
@@ -132,6 +133,7 @@ class Controller {
                 println("Invalid Tank, '$userInput' try again, or quit")
         }
     }
+
     /**
      * engine will list available engines and allow the user to select one using the same method as in the start game
      * user input.
@@ -193,6 +195,7 @@ class Controller {
         }
 
     }
+
     /**
      * status will list set rocket parts and the thrust to weight ratio
      */
@@ -217,6 +220,7 @@ class Controller {
         println("Width (single Engine):  ${rocket.engine.width} meters")
         println("Thrust to weight Ratio: ${rocket.getTWR()}")
     }
+
     /**
      * launch will check if the rocket is able to launch then check if the deltaV of the rocket is high enough to get to space
      */
@@ -228,7 +232,7 @@ class Controller {
             println("You need to select a Tank before you launch!")
         else if (rocket.engine.name == "Unset")
             println("You need to select an Engine before you launch!")
-        else if(rocket.getTWR() < 1.5) // checking if the thrust to weight ratio is high enough
+        else if (rocket.getTWR() < 1.5) // checking if the thrust to weight ratio is high enough
             println("Check Thrust to weight ratio is too low, it must be over 1.5 to launch. Check it by typing status")
         else {
             println("Welcome to pad 39A where the legendary Saturn 5 Launched from")
@@ -284,7 +288,7 @@ class Controller {
     /**
      * Thank you to the people who debug my random programs, which means thanks Anzhela.
      */
-    private fun thankyou(){
+    private fun thankyou() {
         println("Thank you Anzhela for debugging when you has a test in your next class!")
     }
 }

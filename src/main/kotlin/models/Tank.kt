@@ -4,6 +4,4 @@
     LiquidFuel: quantity of liquid fuel in the tank in kg
     Width: width of the tank
  */
-data class Tank(val name: String, val mass: Int, val liquidFuel: Int, val width: Double) {
-
-}
+data class Tank(val name: String, val mass: Int, val liquidFuel: Int, val width: Double)

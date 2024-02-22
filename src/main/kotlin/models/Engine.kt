@@ -7,5 +7,4 @@ package org.example.models
     ISP: efficiency of the engine in seconds
     Width: Greatest width of the engine
  */
-data class Engine(val name: String, val mass: Int, val thrust: Int, val isp: Int, val width: Double) {
-}
+data class Engine(val name: String, val mass: Int, val thrust: Int, val isp: Int, val width: Double)
