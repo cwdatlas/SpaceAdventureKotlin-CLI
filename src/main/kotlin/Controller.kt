@@ -51,7 +51,7 @@ class Controller {
     private var launchAttempts = 0
 
     fun startGame() {
-        println("""______  ______  ______  __  __   ______  ______     ______    __  __  __  __      _____   ______  ______""")
+        println(""" ______  ______  ______  __  __   ______  ______     ______    __  __  __  __     _____   ______  ______""")
         println("""/\  == \/\  __ \/\  ___\/\ \/ /  /\  ___\/\__  _\   /\  == \/ \ \/\ \/\ \/\ \    /\  __-./\  ___\/\  == \   """)
         println("""\ \  __<\ \ \/\ \ \ \___\ \  \_  \ \  __\\/_/\ \/   \ \  __< \ \ \_\ \ \ \ \ \___\ \ \/\ \ \  __\\ \  __<   """)
         println(""" \ \_\ \_\ \_____\ \_____\ \_\ \_\\ \_____\ \ \_\    \ \_____ \ \_____\ \_\ \_____\ \____-\ \_____\ \_\ \_\ """)
@@ -66,7 +66,7 @@ class Controller {
         // loop through readLn() and format user input by making all lowercase and getting rid of spaces
         while (gameLoop) {
             print("-> ") // Fun looking terminal so user knows that they are in game
-            val userInput = readln().lowercase().replace(" ", "") // format user input
+            val userInput = readlnOrNull()?.lowercase()?.replace(" ", "")// format user input
             if (userInput in commands.keys)
                 commands[userInput]?.invoke() // Invoke command in a null-protected way.
             else
