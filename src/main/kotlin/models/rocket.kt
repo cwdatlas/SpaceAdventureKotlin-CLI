@@ -1,7 +1,7 @@
 package models
 
-import org.example.models.Capsule
-import org.example.models.Engine
+import models.Capsule
+import models.Engine
 import kotlin.math.floor
 import kotlin.math.log
 import kotlin.math.pow
