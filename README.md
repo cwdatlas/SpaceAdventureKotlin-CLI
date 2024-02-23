@@ -17,7 +17,7 @@ you must have git and java17 and up installed to run this program
 - in a new folder use 'git repo clone 'https://github.com/cwdatlas/SpaceAdventureKotlin-CLI' in your command line
 - Navigate into the newly created directory so you can see the 'gradlew' file.
 - Now type './gradlew build', this will build a jar with all needed libraries.
-- Lastly, type in 'java -jar build/lib/KSpaceAdventure-CLI-1.0-SNAPSHOT.jar' and rocket builder will boot right up!
+- Lastly, type in 'java -jar build/libs/KSpaceAdventure-CLI-1.0-SNAPSHOT.jar' and rocket builder will boot right up!
 
 Note: Using gradlew run from Gradle plugin application would be better, but because the RocketBuilder program consumes lines
 from the CLI, gradle will start the program, then keep feeding information to the readln(). This makes the program completely
